@@ -4,5 +4,5 @@ SELECT band_name, (CASE
     ELSE  split - formed
 END) AS lifespan
 FROM metal_bands
-WHERE style = 'Glam rock' AND split IS NOT NULL
+WHERE style = 'Glam rock' AND style IS NOT NULL
 ORDER BY lifespan DESC;

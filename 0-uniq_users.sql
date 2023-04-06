@@ -1,0 +1,3 @@
+-- task one
+-- creates table users
+CREATE IF NOT EXISTS TABLE users (id INT AUTOINCREMENT NOT NULL PRIVATE KEY, email CHAR(255) UNIQUE NOT NULL, name CHAR(255);

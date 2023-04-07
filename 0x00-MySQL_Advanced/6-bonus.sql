@@ -7,7 +7,7 @@ CREATE PROCEDURE AddBonus(
     IN score INT)
     BEGIN
         DECLARE project_id INT;
-        SELECT id INTO project_id FROM projects WHERE name = project_name;
+        SELECT id INTO project_id FROM projects WHERE name = project_name LIMIT 1;
         IF project_id IS NULL 
         THEN
             INSERT INTO projects(name) VALUES(project_name);

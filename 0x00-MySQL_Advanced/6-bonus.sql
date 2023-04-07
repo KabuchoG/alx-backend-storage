@@ -14,5 +14,5 @@ CREATE PROCEDURE AddBonus(
             SET project_id = LAST_INSERT_ID();
         END IF;
         INSERT INTO corrections (user_id, project_id, score) VALUES(user_id, project_id, score);
-    END $$
+    END; $$
 DELIMITER ;

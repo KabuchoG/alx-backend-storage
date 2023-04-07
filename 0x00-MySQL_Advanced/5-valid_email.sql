@@ -2,11 +2,11 @@
 DROP TRIGGER IF EXISTS reset_valid_email;
 DELIMITER $$
 CREATE TRIGGER reset_valid_email
-AFTER UPDATE ON users
+BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
-    UPDATE users
-    WHERE NEW.email != OLD.email
-    IF(NEW.email = NULL, SET users.valid_email = 0, SET users.valid_email = 1);
+    IF NEW.email <> OLD.email THEN
+        SET NEW.valid_email = 0;
+    END IF;
 END $$
 DELIMITER ;
